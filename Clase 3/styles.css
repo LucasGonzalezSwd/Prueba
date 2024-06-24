@@ -1,0 +1,14 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    width: 10.5rem;
+    height: 10.5rem;
+    padding: 20px;
+    border: 5px solid #000;
+    margin: 15px;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}

@@ -1,0 +1,192 @@
+section {
+    margin-bottom: 40px;
+}
+h2 {
+    margin-bottom: 10px;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+
+
+/* Estilos para la sección de Transición CSS */
+.transition-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: background-color 3000ms ease;
+    transition-delay: 1s;
+}
+.transition-example .box:hover {
+    background-color: blue;
+}
+
+/* Estilos para la sección de Animación CSS */
+.animation-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: move 2s infinite alternate ease ;
+}
+
+.animation-example2 .box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: move 2s 2 alternate linear;
+    animation-delay: 1s;
+}
+.animation-example3 .box {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    animation: move3 2s infinite alternate ease-in-out;
+    
+}
+
+
+@keyframes move {
+    0% { left: 0; }
+    100% { left: 80% }
+}
+
+@keyframes move2 {
+    0% { left: 0; }
+    100% { left: 40% }
+}
+@keyframes move3 {
+    0% { left: 0; }
+    100% { left: 40% }
+}
+
+/* Estilos para la sección de Transición en Botones */
+.button-example .button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    transition: all 0.3s ease;
+}
+.button-example .button:hover {
+    background-color: rgb(86, 255, 2);
+    color: rgb(0, 78, 0);
+    border: 2px solid rgb(0, 0, 0);
+    transform:scale(1.5);
+}
+
+/* Estilos para la sección de Loader CSS */
+.loader-example .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid gray;
+    border-top: 5px solid blue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para la sección de Tarjeta Animada */
+.card-example .card {
+    width: 200px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-example .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.card-example .image {
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+    animation: pulse 1.5s infinite alternate;
+}
+@keyframes pulse {
+    0% { background-color: #eee; }
+    50% { background-color: #cecbcb; }
+    100% { background-color: #b6b4b4; }
+}
+
+
+/* Estilos para la sección de Rebote */
+.bounce-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-150px);
+    }
+    60% {
+        transform: translateY(-75px);
+    }
+}
+
+/* Estilos para la sección de Agrandar y Achicar */
+.scale-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    animation: scale 2s infinite alternate;
+}
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+/* Estilos para la sección de Desvanecerse */
+.fade-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    animation: fade 3s infinite alternate;
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+/* Estilos para la sección de Girar y Escalar */
+.rotate-scale-example .box {
+    width: 100px;
+    height: 100px;
+    background-color: navy;
+    animation: rotateScale 1s infinite alternate;
+}
+@keyframes rotateScale {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}

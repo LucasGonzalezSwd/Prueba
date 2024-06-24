@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+
+     /* Espacio entre los elementos */
+    justify-content: end;
+    align-items: end; /* Alinear los elementos en el centro verticalmente */
+    width: 90%; /* Ajusta el ancho del contenedor */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    height: 90%;
+  }
+  
+  .item {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+    width: 15%;
+    /*flex: 1;  Hace que todos los elementos crezcan de manera uniforme */
+  }
+  
+  

@@ -1,0 +1,36 @@
+body {
+  background-color: rgba(222, 204, 4, 0.778);
+  box-sizing: border-box;
+  
+}
+
+#heading2{
+  color: rgb(3, 6, 3);
+}
+
+.heading{
+  color: darkgreen;
+}
+
+p{
+
+  color: crimson;
+}
+
+@keyframes bounce {
+  0%,  100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-30px);
+  }
+  80% {
+      transform: translateY(-5px);
+  }
+}
+
+
+.bounce {
+
+  animation: bounce 1s infinite;
+}

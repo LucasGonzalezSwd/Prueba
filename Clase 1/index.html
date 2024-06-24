@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Clase fullStack</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        /* Estilos básicos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        /* Estilos para el formulario */
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container h2 {
+            margin-bottom: 1rem;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: cadetblue;
+            color: white;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+
+
+</head>
+
+<img>
+    <section style="width: 40rem;">
+        <h1 style="text-align:center; background-color: rgb(29, 27, 159); color: chartreuse;">¡Bienvenidos!</h1>
+        <h1> asdasdasddas </h1>
+    </section>       
+
+    <h1 class="heading" style="border:2px solid Tomato;">H 1</h1>
+    <h2 style="color:Tomato;">H 2</h2>
+    <h3 class="heading" style="border:2px solid DodgerBlue;">H 3</h3>
+    <h4 style="color:DodgerBlue;">H 4</h4>
+    <h5>H 5</h5>
+    <h6 class="heading" >H 6</h6>
+
+    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 50%; background-color: rgb(6, 6, 96); height: 5rem; margin: 0.5rem;">
+        <p class="bounce" style="text-align:center; background-color: cadetblue; padding: 1rem; border: 0.2rem dashed black; ">This is some text sadsdasdasdasdsadsad.</p>
+
+
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; width: 50%; background-color: rgb(6, 6, 96); height: 5rem; margin: 0.5rem;">
+        <p style="text-align:center; background-color: cadetblue;">This is some text sadsdasdasdasdsadsad.</p>
+
+
+    </div>
+ </div>
+    <p id="demo"></p>
+    <hr>
+    <h2>This is H 2</h2>
+    <p class="heading" id="heading2">This is some other text.</p>
+    <hr>
+    <p class="heading" id="heading2">Esta es una página de ejemplo creada para aprender HTML. Aquí aprenderemos cómo estructurar un documento HTML básico.</p>
+    <p class="heading">HTML, que significa HyperText Markup Language, es el lenguaje estándar para crear páginas web. Con HTML podemos crear y estructurar secciones, párrafos, y enlaces, entre otros elementos.</p>
+    <h2>Enlaces Útiles</h2>
+
+    <ol>
+        <li> <a href="https://www.w3schools.com" target="_blank">W3Schools</a> - Un excelente recurso para aprender sobre desarrollo web.</li>
+        <li> <a href="about.html">Sobre Nosotros</a> - Información adicional sobre nuestra página (esto necesita un archivo about.html en el mismo directorio).</li>
+    </ol>
+    <b>This text is bold</b>
+    <p class="heading">This is a paragraph.</p>
+    <strong>This text is important!</strong>
+
+    <h2>Imágenes de Ejemplo</h2>
+    <img src="https://via.placeholder.com/150" alt="Imagen de ejemplo 1">
+    <img src="/fondo.jpg" width="500" height="300" alt="Imagen de ejemplo 2">
+
+    <p>Gracias por visitar nuestra página de ejemplo. ¡Esperamos que aprendas mucho!</p>
+
+    <h2>Formulario de Registros</h2>
+        <div class="form-container">
+            <h2>Registro de Usuario</h2>
+            <form id="registrationForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Registrar">
+            </form>
+        </div>
+
+    <h2>Lenguajes de Programación por Dificultad</h2>
+     <table>
+        <thead>
+            <tr>
+                <th>Lenguaje</th>
+                <th>Dificultad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Python</td>
+                <td>Fácil</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Medio</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>Medio</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td>Difícil</td>
+            </tr>
+            <tr>
+                <td>Rust</td>
+                <td>Difícil</td>
+            </tr>
+            <tr>
+                <td>HTML/CSS</td>
+                <td>Fácil</td>
+            </tr>
+        </tbody>
+    </table> 
+
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            /* Simulación del envío del formulario
+             Aquí se puede agregar el código para enviar los datos a un servidor
+             En este caso, mostraremos una alerta de "Usuario registrado" como simulación*/
+            alert("Usuario registrado");
+        });
+    </script>
+    
+    <footer>
+
+        <p>Contacto: [Tu Email] | [Tu Teléfono]</p>
+        <p>&copy; 2024 [Tu Nombre]. Todos los derechos reservados.</p>
+
+    </footer>
+
+</body>
+
+</html>
