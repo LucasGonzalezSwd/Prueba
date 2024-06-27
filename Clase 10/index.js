@@ -129,3 +129,35 @@ console.log(
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam alias quaerat fugiat, asperiores reprehenderit, esse consectetur quae, quod odio et soluta? Earum soluta magnam consectetur consequuntur architecto dolorem. Nisi, accusamus.Sobre mi"
   )
 );
+
+/* 
+Escribe una función llamada numerosImpares que reciba un número como parámetro y devuelva un array con todos los números impares desde 0 hasta ese número (inclusive).
+*/
+
+/*
+Escribe una función que reciba un array de números y devuelva el producto de todos sus elementos.
+*/
+
+/*
+Escribe una función que reciba un array de números y devuelva el menor número de ese array.
+*/
+
+/*
+Escribe una función que reciba una cadena de texto y devuelva el número de consonantes que contiene.
+*/
+
+/*
+Escribe una función llamada numerosMultiplosDeTres que reciba un número como parámetro y devuelva un array con todos los números múltiplos de tres desde 0 hasta ese número (inclusive).
+*/
+
+/*
+Escribe una función que reciba un array de números y devuelva el promedio de todos sus elementos.
+*/
+
+/*
+Escribe una función que reciba una cadena de texto y devuelva el número total de letras (ignorando espacios, números y caracteres especiales) que contiene.
+*/
+
+/*
+Escribe una función que reciba un array de números y un número específico, y devuelva el número del array que sea más cercano a ese número específico.
+*/
