@@ -110,3 +110,22 @@ console.log(numeroMayor([1, 2, 3, 4, 48, 56, 21, 48, 986, 47]));
 
 /*
 Escribe una función que reciba una cadena de texto y devuelva el número de vocales que contiene.*/
+
+function contarVocales(textoLargo) {
+  const vocales = "aeiouAEIOU";
+
+  let contadorDeVocales = 0;
+
+  for (let index = 0; index < textoLargo.length; index++) {
+    if (vocales.includes(textoLargo[index])) {
+      contadorDeVocales = contadorDeVocales + 1;
+    }
+  }
+
+  return contadorDeVocales;
+}
+console.log(
+  contarVocales(
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam alias quaerat fugiat, asperiores reprehenderit, esse consectetur quae, quod odio et soluta? Earum soluta magnam consectetur consequuntur architecto dolorem. Nisi, accusamus.Sobre mi"
+  )
+);
