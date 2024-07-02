@@ -133,22 +133,96 @@ console.log(
 /* 
 Escribe una función llamada numerosImpares que reciba un número como parámetro y devuelva un array con todos los números impares desde 0 hasta ese número (inclusive).
 */
+function numerosImpares(numero) {
+  const impares = [];
+
+  for (let i = 0; i <= numero; i++) {
+    if (i % 2 !== 0) {
+      impares.push(i);
+    }
+  }
+
+  return impares;
+}
+
+console.log(numerosImpares(50));
 
 /*
 Escribe una función que reciba un array de números y devuelva el producto de todos sus elementos.
 */
 
+function multiplicarElementos(array) {
+  let productoDeElementos = 1;
+
+  for (let i = 0; i < array.length; i++) {
+    // productoDeElementos = productoDeElementos * array[i];
+
+    productoDeElementos *= array[i];
+  }
+
+  return productoDeElementos;
+}
+
+console.log(multiplicarElementos([2, 3, 5, 10, 20]));
+
 /*
 Escribe una función que reciba un array de números y devuelva el menor número de ese array.
 */
+
+function buscandoNumeroMenor(array) {
+  let numeroMenor = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < numeroMenor) {
+      numeroMenor = array[i];
+    }
+  }
+
+  return numeroMenor;
+}
+
+console.log(buscandoNumeroMenor([3, 2, 5, 8, 1]));
 
 /*
 Escribe una función que reciba una cadena de texto y devuelva el número de consonantes que contiene.
 */
 
+function contarConsonantes(texto) {
+  const vocales = "aeiouAEIOU ";
+
+  let contador = 0;
+
+  for (let i = 0; i < texto.length; i++) {
+    if (!vocales.includes(texto[i])) {
+      contador++;
+    }
+  }
+
+  return contador;
+}
+
+console.log(
+  contarConsonantes(
+    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolores impedit necessitatibus nam explicabo non labore aperiam a. Praesentium sequi eligendi magnam nisi fugit amet perferendis voluptas dignissimos neque facilis."
+  )
+);
+
 /*
 Escribe una función llamada numerosMultiplosDeTres que reciba un número como parámetro y devuelva un array con todos los números múltiplos de tres desde 0 hasta ese número (inclusive).
 */
+
+function multiplosDeTres(num) {
+  const multiplos = [];
+
+  for (let index = 0; index < num; index++) {
+    if (index % 3 === 0) {
+      multiplos.push(index);
+    }
+  }
+  return multiplos;
+}
+
+console.log(multiplosDeTres(66));
 
 /*
 Escribe una función que reciba un array de números y devuelva el promedio de todos sus elementos.
