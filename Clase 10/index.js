@@ -228,10 +228,61 @@ console.log(multiplosDeTres(66));
 Escribe una función que reciba un array de números y devuelva el promedio de todos sus elementos.
 */
 
+function promedio(array) {
+  let suma = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    suma = suma + array[i];
+  }
+  let resultado = suma / array.length;
+  return resultado;
+}
+
+console.log(promedio([2, 5, 4, 3, 5, 5, 6, 1, 47, 55, 1]));
+
 /*
 Escribe una función que reciba una cadena de texto y devuelva el número total de letras (ignorando espacios, números y caracteres especiales) que contiene.
 */
 
+function contarLetras(palabraysigno) {
+  let contador = 0;
+
+  for (let i = 0; i < palabraysigno.length; i++) {
+    let letraDePalabra = palabraysigno[i];
+
+    if (letraDePalabra.match(/[a-zA-Z]/)) {
+      contador++;
+    }
+  }
+
+  return contador;
+}
+
+let textorandom =
+  "!!!????¿¿****asdnhasdasdasdasdasdasdasdasdadsasddasfdasfssd 31321346544968749864656132";
+
+console.log(contarLetras(textorandom));
+
 /*
 Escribe una función que reciba un array de números y un número específico, y devuelva el número del array que sea más cercano a ese número específico.
 */
+
+function masCercano(array, numero) {
+  let numeroMasCercano = array[0];
+  let diferenciaMinima = Math.abs(array[0] - numero);
+
+  for (let i = 1; i < array.length; i++) {
+    let diferencia = Math.abs(array[i] - numero);
+
+    if (diferencia < diferenciaMinima) {
+      numeroMasCercano = array[i];
+      diferenciaMinima = diferencia;
+    }
+  }
+  return numeroMasCercano;
+}
+
+let numerosArray = [2, 6, 10, 8, 15, 20];
+let numeroRandom = 9;
+
+console.log(masCercano(numerosArray, numeroRandom));

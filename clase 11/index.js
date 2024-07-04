@@ -149,3 +149,19 @@ const objetoRandom = {
 };
 
 console.log(contarProps(objetoRandom));
+
+function clasificarEdad(edad) {
+  if (edad > 0 && edad < 10) {
+    console.log("eres un niño");
+  } else if (edad >= 10 && edad < 18) {
+    console.log("eres un adolecente");
+  } else if (edad >= 18 && edad < 65) {
+    console.log("eres un adulto");
+  } else if (edad >= 65 && edad < 200) {
+    console.log("eres un anciano");
+  } else {
+    return "Eres un dios";
+  }
+}
+
+console.log(clasificarEdad(201));
