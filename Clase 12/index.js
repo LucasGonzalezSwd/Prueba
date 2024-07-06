@@ -129,7 +129,6 @@ console.log(aprobadoODesaprobados(estudiantes));
 
 function filtrarymodificar(estudiantes) {
   let estudiantesAModificar = [];
-
   for (let i = 0; i < estudiantes.length; i++) {
     let estudiante = estudiantes[i];
 
@@ -143,7 +142,6 @@ function filtrarymodificar(estudiantes) {
   }
   return estudiantesAModificar;
 }
-
 let listaEstudiantes = [
   { nombre: "pepe", nota: 8 },
   { nombre: "jaimito", nota: 5 },
@@ -151,3 +149,9 @@ let listaEstudiantes = [
 ];
 
 console.log(filtrarymodificar(listaEstudiantes));
+
+// Crear una función que reciba un array de objetos (cada objeto representa un empleado con propiedades como nombre y salario) y devuelva un array con los nombres de los empleados que ganan más de $3000.
+
+// Crear una función que reciba un array de objetos (cada objeto representa un producto con propiedades como nombre y precio) y devuelva un array con los productos que cuestan menos de $20. Además, agregar una propiedad affordable a cada objeto con el valor true si el producto cuesta menos de $20 y false si no.
+
+//Descripción: Crear una función que reciba un array de objetos (cada objeto representa una persona con propiedades como nombre y edad) y devuelva un array con los nombres de las personas mayores de edad (edad mayor o igual a 18).
