@@ -152,6 +152,68 @@ console.log(filtrarymodificar(listaEstudiantes));
 
 // Crear una función que reciba un array de objetos (cada objeto representa un empleado con propiedades como nombre y salario) y devuelva un array con los nombres de los empleados que ganan más de $3000.
 
-// Crear una función que reciba un array de objetos (cada objeto representa un producto con propiedades como nombre y precio) y devuelva un array con los productos que cuestan menos de $20. Además, agregar una propiedad affordable a cada objeto con el valor true si el producto cuesta menos de $20 y false si no.
+let empleados = [
+  { nombre: "Pepe", salario: 3500 },
+  { nombre: "Rodrigo", salario: 3900 },
+  { nombre: "Messi", salario: 2999 },
+];
+
+function empleadosBienPagados(empleados) {
+  let empleadosConBuenSalario = [];
+
+  for (let i = 0; i < empleados.length; i++) {
+    if (empleados[i].salario >= 3000) {
+      empleadosConBuenSalario.push(empleados[i].nombre);
+    }
+  }
+
+  return empleadosConBuenSalario;
+}
+console.log(empleadosBienPagados(empleados));
+
+// Crear una función que reciba un array de objetos (cada objeto representa un producto con propiedades como nombre y precio) y devuelva un array con los productos que cuestan menos de $20. Además, agregar una propiedad aceptable a cada objeto con el valor true si el producto cuesta menos de $20 y false si no.
+
+let producto = [
+  { nombre: "lapiz", precio: 5 },
+  { nombre: "lapicera", precio: 21 },
+  { nombre: "Libro", precio: 25 },
+];
+
+function productosBaratos(arrayproduct) {
+  let productosFiltrados = [];
+
+  for (let i = 0; i < arrayproduct.length; i++) {
+    let productos = arrayproduct[i];
+
+    if (productos.precio < 20) {
+      productos.aceptable = true;
+    } else {
+      productos.aceptable = false;
+    }
+    productosFiltrados.push(productos);
+  }
+  return productosFiltrados;
+}
+
+console.log(productosBaratos(producto));
 
 //Descripción: Crear una función que reciba un array de objetos (cada objeto representa una persona con propiedades como nombre y edad) y devuelva un array con los nombres de las personas mayores de edad (edad mayor o igual a 18).
+
+let personas = [
+  { nombre: "Pepe", edad: 35 },
+  { nombre: "Rodrigo", edad: 39 },
+  { nombre: "Messi", edad: 15 },
+];
+
+function personasMayores(persona) {
+  let personaMayor = [];
+
+  for (let i = 0; i < persona.length; i++) {
+    if (persona[i].edad <= 18) {
+      personaMayor.push(persona[i].nombre);
+    }
+  }
+
+  return personaMayor;
+}
+console.log(personasMayores(personas));
