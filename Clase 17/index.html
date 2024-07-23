@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de Selección del DOM</title>
+    <style>
+        .myClass {
+            color: blue;
+        }
+        .anotherClass {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="myId">Título Principal</h1>
+    <p class="myClass">Este es un párrafo con clase "myClass".</p>
+    <p class="myClass anotherClass">Este es otro párrafo con clase "myClass" y "anotherClass".</p>
+    <div>
+        <p>Este es un párrafo dentro de un div.</p>
+        <p class="myClass">Este es un párrafo con clase "myClass" dentro de un div.</p>
+    </div>
+
+    <script>
+        // Selecciona un elemento por su ID
+        let element = document.getElementById("myId");
+        console.log(element);
+
+        // Selecciona todos los elementos con una clase específica
+        let elements = document.getElementsByClassName("myClass");
+        console.log(elements);
+
+        // Selecciona todos los elementos con un nombre de etiqueta específico
+        let elements2 = document.getElementsByTagName("p");
+        console.log(elements2);
+
+        // Selecciona el primer elemento que coincide con el selector CSS
+        let element3 = document.querySelector(".myClass");
+        console.log(element3);
+
+        // Selecciona todos los elementos que coinciden con el selector CSS
+        let elements4 = document.querySelectorAll("div p.myClass");
+        console.log(elements4);
+    </script>
+</body>
+</html>

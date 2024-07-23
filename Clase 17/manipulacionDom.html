@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de Eventos y Manipulación del DOM</title>
+    <style>
+        .clicked {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Eventos</h1>
+    <button id="myButton">Haz clic aquí</button>
+    <p id="myParagraph">Este párrafo cambiará cuando hagas clic en el botón.</p>
+
+    <script>
+        // Seleccionar el botón y el párrafo
+        let button = document.getElementById("myButton");
+        let paragraph = document.getElementById("myParagraph");
+
+        // Añadir un manejador de eventos al botón
+        button.addEventListener("click", function() {
+            // Mostrar una alerta
+            alert("¡Botón clickeado!");
+
+            // Cambiar el contenido del párrafo
+            paragraph.textContent = "El contenido ha cambiado después del clic.";
+
+            // Añadir una clase al párrafo
+            paragraph.classList.add("clicked");
+        });
+    </script>
+</body>
+</html>

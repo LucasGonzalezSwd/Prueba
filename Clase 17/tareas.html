@@ -1,0 +1,103 @@
+<!-- // Crear una página web interactiva donde los usuarios puedan agregar, modificar y eliminar elementos de una lista de tareas.
+// Implementación del Proyecto:
+
+// Paso 1: Crear la estructura HTML básica. 
+// Paso 2: Seleccionar los elementos del DOM necesarios.
+// Paso 3: Añadir funcionalidad para agregar nuevas tareas.
+// Paso 4: Añadir funcionalidad para eliminar tareas.
+// Paso 5: Añadir funcionalidad para marcar tareas como completadas. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #107060;
+    }
+    h1 {
+      color: #333;
+    }
+    #task-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .task-item {
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .task-item.completed {
+      text-decoration: line-through;
+      color: #068c15;
+    }
+    button {
+      background-color: #86302a;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    button.complete-btn {
+      background-color: #4caf50;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Tareas</h1>
+  <input type="text" id="task-input" placeholder="Añadir nueva tarea">
+  <button id="add-task-btn">Añadir Tarea</button>
+  <ul id="task-list"></ul>
+
+  <script>
+    // Paso 2: Seleccionar los elementos del DOM necesarios
+    const taskInput = document.getElementById('task-input');
+    const BotondeAñadirTareas = document.getElementById('add-task-btn');
+    const taskList = document.getElementById('task-list');
+
+    // Paso 3: Añadir funcionalidad para agregar nuevas tareas
+    BotondeAñadirTareas.addEventListener('click', function() {
+      const taskText = taskInput.value.trim();
+      if (taskText !== '') {
+        const taskItem = document.createElement('li');
+        taskItem.className = 'task-item';
+        taskItem.innerHTML = `
+          <span>${taskText}</span>
+          <div>
+            <button class="complete-btn">Completada</button>
+            <button class="delete-btn">Eliminar</button>
+          </div>
+        `;
+        taskList.appendChild(taskItem);
+        taskInput.value = '';
+        AñadirTareas(taskItem);
+      }
+    });
+
+    // Paso 4: Añadir funcionalidad para eliminar tareas
+    function AñadirTareas(taskItem) {
+      const deleteBtn = taskItem.querySelector('.delete-btn');
+      deleteBtn.addEventListener('click', function() {
+        taskList.removeChild(taskItem);
+      });
+
+      // Paso 5: Añadir funcionalidad para marcar tareas como completadas
+      const completeBtn = taskItem.querySelector('.complete-btn');
+      completeBtn.addEventListener('click', function() {
+        taskItem.classList.toggle('completed');
+      });
+    }
+  </script>
+</body>
+</html>
