@@ -1,0 +1,111 @@
+Eventos y Manejo de Eventos en JavaScript
+
+1. ¿Qué es un Evento?
+Un evento es una acción o suceso que ocurre en el navegador, como un clic de ratón, el envío de un formulario, o la carga de una página. Los eventos permiten a los desarrolladores capturar y responder a las interacciones del usuario con la página web.
+
+2. Tipos Comunes de Eventos
+
+Algunos de los eventos más comunes en JavaScript incluyen:
+
+Eventos del Ratón:
+
+click: Ocurre cuando se hace clic en un elemento.
+dblclick: Ocurre cuando se hace doble clic en un elemento.
+mouseover: Ocurre cuando el ratón se mueve sobre un elemento.
+mouseout: Ocurre cuando el ratón se mueve fuera de un elemento.
+mousedown: Ocurre cuando se presiona un botón del ratón sobre un elemento.
+mouseup: Ocurre cuando se suelta un botón del ratón sobre un elemento.
+Eventos del Teclado:
+
+keydown: Ocurre cuando se presiona una tecla.
+keyup: Ocurre cuando se suelta una tecla.
+keypress: Ocurre cuando se presiona una tecla que produce un valor de carácter.
+
+Eventos del Formulario:
+
+submit: Ocurre cuando se envía un formulario.
+change: Ocurre cuando el valor de un elemento de formulario cambia.
+focus: Ocurre cuando un elemento de formulario gana el foco.
+blur: Ocurre cuando un elemento de formulario pierde el foco.
+
+Eventos de la Página:
+
+load: Ocurre cuando la página ha terminado de cargarse.
+resize: Ocurre cuando la ventana del navegador cambia de tamaño.
+scroll: Ocurre cuando el usuario desplaza la barra de desplazamiento.
+
+3. Añadir Manejadores de Eventos
+
+Los manejadores de eventos son funciones que se ejecutan en respuesta a un evento. Hay varias formas de añadir manejadores de eventos en JavaScript:
+
+Usando el Atributo HTML
+Puedes definir manejadores de eventos directamente en el HTML, pero no es una práctica recomendada porque mezcla la estructura del documento con su comportamiento.
+
+<button onclick="alert('¡Botón clickeado!')">Haz clic aquí</button>
+
+Usando la Propiedad del Evento
+Puedes asignar una función a la propiedad del evento en el elemento.
+
+let button = document.getElementById('myButton');
+button.onclick = function() {
+  alert('¡Botón clickeado!');
+};
+
+Usando addEventListener.
+
+La forma más moderna y flexible de añadir manejadores de eventos es usar addEventListener. Este método permite añadir múltiples manejadores de eventos al mismo elemento.
+
+let button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  alert('¡Botón clickeado!');
+});
+
+
+Cuando un evento ocurre en un elemento, se propaga hacia arriba y hacia abajo en el árbol del DOM. La propagación de eventos puede ser manejada de tres formas:
+
+Fase de Captura
+El evento se propaga desde el nodo raíz del DOM hasta el nodo objetivo. Puedes manejar esta fase estableciendo el tercer argumento de addEventListener a true.
+
+element.addEventListener('click', function(event) {
+  // Manejador de eventos en la fase de captura
+}, true);
+
+
+Fase de Burbujeo
+El evento se propaga desde el nodo objetivo hasta el nodo raíz. Esta es la fase predeterminada.
+
+element.addEventListener('click', function(event) {
+  // Manejador de eventos en la fase de burbujeo
+}, false);
+
+
+Detener la Propagación
+Puedes detener la propagación del evento en cualquier fase usando event.stopPropagation().
+
+element.addEventListener('click', function(event) {
+  event.stopPropagation();
+  // El evento no se propagará más
+});
+
+Cuando un evento ocurre, se crea un objeto evento que contiene información sobre el evento y el estado del DOM. Este objeto se pasa automáticamente al manejador de eventos.
+
+Propiedades del Objeto Evento
+Algunas propiedades comunes del objeto evento incluyen:
+
+type: El tipo de evento (por ejemplo, 'click', 'mouseover').
+target: El elemento en el que ocurrió el evento.
+currentTarget: El elemento al que se adjuntó el manejador de eventos.
+clientX y clientY: Las coordenadas del evento (para eventos del ratón).
+key: La tecla que se presionó (para eventos del teclado).
+
+
+Métodos del Objeto Evento
+
+preventDefault(): Evita que ocurra la acción predeterminada del evento.
+
+document.getElementById('myLink').addEventListener('click', function(event) {
+  event.preventDefault();
+  alert('La acción predeterminada ha sido evitada');
+});
+
+El manejo de eventos en JavaScript es crucial para crear interacciones dinámicas y receptivas en las páginas web. Comprender cómo añadir y manejar eventos, así como cómo funciona la propagación de eventos y el objeto evento, permite a los desarrolladores crear aplicaciones web interactivas y robustas.

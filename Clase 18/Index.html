@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interacción con Eventos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+      background-color: #333;
+    }
+    #click-box {
+      background-color: #ff6347;
+    }
+    #hover-box {
+      background-color: #4682b4;
+    }
+    #input-box {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interacción con Eventos</h1>
+  <div id="click-box" class="box"></div>
+  <div id="hover-box" class="box"></div>
+  <div id="input-box">
+    <input type="text" id="text-input" placeholder="Escribe algo...">
+    <p id="input-result"></p>
+  </div>
+  <button id="toggle-btn">Alternar Colores</button>
+
+  <script>
+    // Seleccionar los elementos del DOM necesarios
+    const clickBox = document.getElementById('click-box');
+    const hoverBox = document.getElementById('hover-box');
+    const textInput = document.getElementById('text-input');
+    const inputResult = document.getElementById('input-result');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    // Evento de clic
+    clickBox.addEventListener('click', () => {
+      alert('¡Has hecho clic en el cuadro rojo!');
+    });
+
+    hoverBox.addEventListener('click', () => {
+      alert('¡Has hecho clic en el cuadro rojo!');
+    });
+
+
+    // Evento de desplazamiento del mouse (hover)
+    hoverBox.addEventListener('mouseover', () => {
+      hoverBox.style.backgroundColor = '#32cd32';
+    });
+
+    hoverBox.addEventListener('mouseout', () => {
+      hoverBox.style.backgroundColor = '#4682b4';
+    });
+
+    // Evento de entrada de texto
+    textInput.addEventListener('input', (event) => {
+      inputResult.textContent = `Has escrito: ${event.target.value}`;
+    });
+
+    // Evento de clic para alternar colores
+    toggleBtn.addEventListener('click', () => {
+      if (clickBox.style.backgroundColor === 'rgb(255, 99, 71)') {
+        clickBox.style.backgroundColor = '#e22';
+        hoverBox.style.backgroundColor = '#333';
+      } else {
+        clickBox.style.backgroundColor = '#ff6347';
+        hoverBox.style.backgroundColor = '#4682b4';
+      }
+    });
+  </script>
+</body>
+</html>

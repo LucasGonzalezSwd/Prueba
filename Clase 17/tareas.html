@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
       margin: 20px;
       padding: 20px;
-      background-color: #107060;
+      background-color: #0788729b;
     }
     h1 {
       color: #333;
@@ -29,16 +29,20 @@
     .task-item {
       background-color: #fff;
       margin-bottom: 10px;
+      width: 40%;
+      height: 3rem;
       padding: 10px;
       border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+    
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
     .task-item.completed {
       text-decoration: line-through;
-      color: #068c15;
+      color: #010201;
     }
     button {
       background-color: #86302a;
@@ -52,13 +56,24 @@
       background-color: #4caf50;
       margin-right: 10px;
     }
+    button.edit-btn{
+      background-color: #fa5;
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
   <h1>Lista de Tareas</h1>
-  <input type="text" id="task-input" placeholder="Añadir nueva tarea">
+ 
+
+    <input type="text" id="task-input" placeholder="Añadir nueva tarea">
+  
   <button id="add-task-btn">Añadir Tarea</button>
-  <ul id="task-list"></ul>
+  
+  <ul id="task-list" style="width: 100%; height: 100%; display: 
+        flex; justify-content: space-evenly; flex-wrap: wrap; ">
+ 
+  </ul>
 
   <script>
     // Paso 2: Seleccionar los elementos del DOM necesarios
@@ -73,8 +88,9 @@
         const taskItem = document.createElement('li');
         taskItem.className = 'task-item';
         taskItem.innerHTML = `
-          <span>${taskText}</span>
-          <div>
+        <div>
+          <span class="task-text"> ${taskText}</span>
+            <button class="edit-btn">Editar</button>
             <button class="complete-btn">Completada</button>
             <button class="delete-btn">Eliminar</button>
           </div>
@@ -97,6 +113,18 @@
       completeBtn.addEventListener('click', function() {
         taskItem.classList.toggle('completed');
       });
+       
+      const editBtn =  taskItem.querySelector('.edit-btn');
+      editBtn.addEventListener("click", function () {
+        const taskTextElement = taskItem.querySelector(".task-text")
+        const currentText = taskTextElement.textContent
+        const newText = prompt("Edita la tarea" , currentText)
+
+        if (newText !== null && newText.trim() !== "") {
+          taskTextElement.textContent = newText.trim()
+        }
+      })
+
     }
   </script>
 </body>

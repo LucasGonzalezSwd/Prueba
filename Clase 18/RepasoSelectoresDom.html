@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos Avanzados de Selección del DOM</title>
+    <style>
+        .myClass {
+            color: blue;
+        }
+        .anotherClass {
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .changedTitle {
+            color: rgb(129, 6, 143);
+            background-color: yellow;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainTitle" style="height: 150px; width: 100%;">
+    <h1>Título Principal</h1>
+</div>
+    <p class="myClass">Este es un párrafo con clase "myClass".</p>
+    <p class="myClass anotherClass">Este es otro párrafo con clase "myClass" y "anotherClass".</p>
+    <div>
+        <p>Este es un párrafo dentro de un div.</p>
+        <p class="myClass">Este es un párrafo con clase "myClass" dentro de un div.</p>
+    </div>
+    <button id="changeColorBtn">Cambiar Color</button>
+    <button id="addTextBtn">Añadir Texto</button>
+    <button id="toggleHighlightBtn">Alternar Resaltado</button>
+    <button id="changeTitleStyleBtn">Cambiar Estilo del Título</button>
+
+    <script>
+        // Selecciona un elemento por su ID
+        let mainTitle = document.getElementById("mainTitle");
+
+        // Selecciona todos los elementos con una clase específica
+        let myClassElements = document.getElementsByClassName("myClass");
+
+        // Cambiar color de texto de todos los elementos con la clase "myClass"
+        for (let element of myClassElements) {
+            element.style.color = "red";
+        }
+
+        // Selecciona todos los elementos con un nombre de etiqueta específico
+        let pElements = document.getElementsByTagName("p");
+
+        // Añadir un borde a todos los elementos <p>
+        for (let element of pElements) {
+            element.style.border = "2px solid black";
+        }
+
+        // Selecciona el primer elemento que coincide con el selector CSS
+        let firstMyClassElement = document.querySelector(".myClass");
+
+        // Cambiar el texto del primer elemento con la clase "myClass"
+        firstMyClassElement.textContent = "Texto cambiado del primer elemento con clase 'myClass'";
+
+        // Selecciona todos los elementos que coinciden con el selector CSS
+        let divMyClassElements = document.querySelectorAll("div p.myClass");
+
+        // Añadir una clase para resaltar los elementos <p> dentro de un <div> con clase "myClass"
+        divMyClassElements.forEach(element => {
+            element.classList.add("highlight");
+        });
+
+        // Cambiar color de texto al hacer clic en el botón "Cambiar Color"
+        document.getElementById("changeColorBtn").addEventListener("click", () => {
+            for (let element of myClassElements) {
+                element.style.color = "green";
+            }
+        });
+
+        // Añadir texto al final del documento al hacer clic en el botón "Añadir Texto"
+        document.getElementById("addTextBtn").addEventListener("click", () => {
+            let newText = document.createElement("p");
+            newText.textContent = "Este es un nuevo párrafo añadido por JavaScript.";
+            document.body.appendChild(newText);
+        });
+
+        // Alternar la clase "highlight" al hacer clic en el botón "Alternar Resaltado"
+        document.getElementById("toggleHighlightBtn").addEventListener("click", () => {
+            divMyClassElements.forEach(element => {
+                element.classList.toggle("highlight");
+            });
+        });
+
+        // Cambiar estilo del título principal al hacer clic en el botón "Cambiar Estilo del Título"
+        document.getElementById("changeTitleStyleBtn").addEventListener("click", () => {
+            mainTitle.classList.toggle("changedTitle");
+        });
+    </script>
+</body>
+</html>

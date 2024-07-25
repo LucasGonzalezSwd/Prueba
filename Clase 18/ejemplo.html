@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos en JavaScript</title>
+  <style>
+    .highlight {
+      background-color: rgb(13, 66, 157);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="mainTitle">Título Principal</h1>
+  <button id="changeTextBtn">Cambiar Texto</button>
+  <button id="addParaBtn">Añadir Párrafo</button>
+  <button id="toggleHighlightBtn">Alternar Resaltado</button>
+  <form id="myForm">
+    <input type="text" id="nameInput" placeholder="Nombre">
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <script>
+    // Seleccionar elementos
+    const mainTitle = document.getElementById('mainTitle');
+    const changeTextBtn = document.getElementById('changeTextBtn');
+    const addParaBtn = document.getElementById('addParaBtn');
+    const toggleHighlightBtn = document.getElementById('toggleHighlightBtn');
+    const myForm = document.getElementById('myForm');
+    const nameInput = document.getElementById('nameInput');
+    
+    // Cambiar texto al hacer clic en el botón
+    changeTextBtn.addEventListener('click', () => {
+      mainTitle.textContent = 'Título Cambiado 2 veces';
+    });
+
+    // Añadir un nuevo párrafo al hacer clic en el botón
+    addParaBtn.addEventListener('click', () => {
+      const newPara = document.createElement('p');
+      newPara.textContent = 'Nuevo párrafo añadido 2 veces';
+      document.body.appendChild(newPara);
+    });
+
+    // Alternar clase de resaltado al hacer clic en el botón
+    toggleHighlightBtn.addEventListener('click', () => {
+      mainTitle.classList.toggle('highlight');
+    });
+
+    // Manejar el envío del formulario
+    myForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Formulario enviado: ' + nameInput.value);
+      nameInput.value = '';
+      
+    });
+  </script>
+</body>
+</html>
