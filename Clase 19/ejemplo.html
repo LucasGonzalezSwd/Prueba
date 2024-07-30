@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicación de Tareas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    #task-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .task-item {
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .task-item.completed {
+      text-decoration: line-through;
+      color: #ccc;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+    button.complete-btn {
+      background-color: #4caf50;
+    }
+    button.edit-btn {
+      background-color: #ffa500;
+    }
+    button.delete-btn {
+      background-color: #ff6347;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aplicación de Tareas</h1>
+  <input type="text" id="task-input" placeholder="Añadir nueva tarea">
+  <button id="add-task-btn">Añadir Tarea</button>
+  <ul id="task-list"></ul>
+
+  <script>
+    // Seleccionar los elementos del DOM necesarios
+    const taskInput = document.getElementById('task-input');
+    const addTaskBtn = document.getElementById('add-task-btn');
+    const taskList = document.getElementById('task-list');
+
+    // Añadir funcionalidad para agregar nuevas tareas
+    addTaskBtn.addEventListener('click', function() {
+      const taskText = taskInput.value.trim();
+      if (taskText !== '') {
+        const taskItem = document.createElement('li');
+        taskItem.className = 'task-item';
+        taskItem.innerHTML = `
+          <span class="task-text">${taskText}</span>
+          <div>
+            <button class="edit-btn">Editar</button>
+            <button class="complete-btn">Completada</button>
+            <button class="delete-btn">Eliminar</button>
+          </div>
+        `;
+        taskList.appendChild(taskItem);
+        taskInput.value = '';
+        addTaskEvents(taskItem);
+      }
+    });
+
+    // Función para añadir eventos a las tareas
+    function addTaskEvents(taskItem) {
+      const deleteBtn = taskItem.querySelector('.delete-btn');
+      deleteBtn.addEventListener('click', function() {
+        taskList.removeChild(taskItem);
+      });
+
+      const completeBtn = taskItem.querySelector('.complete-btn');
+      completeBtn.addEventListener('click', function() {
+        taskItem.classList.toggle('completed');
+      });
+
+      const editBtn = taskItem.querySelector('.edit-btn');
+      editBtn.addEventListener('click', function() {
+        const taskTextElement = taskItem.querySelector('.task-text');
+        const currentText = taskTextElement.textContent;
+        const newText = prompt('Edita la tarea', currentText);
+        if (newText !== null && newText.trim() !== '') {
+          taskTextElement.textContent = newText.trim();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+button.borrarButton{
+    background-color: #cc0606;
+}
+
+button.completar-boton{
+    background-color: #059b1c;
+}
+
+button.boton-editar{
+    background-color: rgb(213, 193, 38);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(244, 244, 244, 0.878);
+}
+
+#tarea-input{
+    list-style-type: none;
+    padding: 0;
+}
+
+.texto-elemento{
+    padding: 1rem;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.626);
+    width: 100%;
+  
+}
+
+.texto-elemento.completado{
+    text-decoration: line-through;
+    color: #25ac0a;
+}
+
+button.button-add{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul.rounded-lista{
+    display: flex;
+    align-items:start;
+    justify-content:start;
+    width: 80%;
+    border-radius: 5px;
+    background-color: #6A20AB;
+    flex-wrap: wrap;
+    
+    
+}
