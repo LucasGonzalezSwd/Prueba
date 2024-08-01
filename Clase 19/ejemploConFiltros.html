@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="width: 100%; display: flex; justify-content: center; overflow-x: hidden;">
+    <div style="display: flex; flex-direction: column; width: 60%; background-color: #AC2EFE; color: #ffffff; align-items: center; height: 100%; min-height: 18rem; font-family: 'Courier New', Courier, monospace; font-size: 0.7rem; justify-content: center; margin-top: 3.5rem;">
+        <h1>Proyecto Lista de Tareas</h1>
+        <input type="text" id="tarea-input" placeholder="Añadir nueva tarea...">
+        <button id="boton-añadir-tarea" class="button-add">Añadir tarea</button>
+        <div>
+            <button id="mostrar-todas">Todas</button>
+            <button id="mostrar-completadas">Completadas</button>
+            <button id="mostrar-no-completadas">No Completadas</button>
+        </div>
+        <ul id="lista-tareas" class="rounded-lista">
+            
+
+
+        </ul>
+    </div>
+
+    <script>
+        const tareaInput = document.getElementById("tarea-input");
+        const botonTarea = document.getElementById("boton-añadir-tarea");
+        const listaTareas = document.getElementById("lista-tareas");
+
+        botonTarea.addEventListener("click", function() {
+            const textoTarea = tareaInput.value.trim();
+            if (textoTarea !== "") {
+                const itemTarea = document.createElement("li");
+                itemTarea.className = "texto-elemento";
+                itemTarea.innerHTML = `
+                    <span class="texto-tarea">${textoTarea}</span>
+                    <div> 
+                        <button class="boton-editar">Editar</button>
+                        <button class="completar-boton">Completar</button>
+                        <button class="borrarButton">Eliminar</button>
+                    </div>
+                `;
+                listaTareas.appendChild(itemTarea);
+                tareaInput.value = "";
+                addTaskEvents(itemTarea);
+                saveTasks();
+            }
+        });
+ 
+        function Añadir(tarea) {
+            
+        }
+
+        function addTaskEvents(itemTarea) {
+            const borrarBoton = itemTarea.querySelector(".borrarButton");
+            borrarBoton.addEventListener("click", function() {
+                listaTareas.removeChild(itemTarea);
+                saveTasks();
+            });
+
+            const completarTarea = itemTarea.querySelector(".completar-boton");
+            completarTarea.addEventListener("click", function() {
+                itemTarea.classList.toggle("completado");
+                saveTasks();
+            });
+
+            const botonEditar = itemTarea.querySelector(".boton-editar");
+            botonEditar.addEventListener("click", function() {
+                const textoEmElemento = itemTarea.querySelector(".texto-tarea");
+                const textoActual = textoEmElemento.textContent;
+                const nuevoTexto = prompt("Editar la tarea", textoActual);
+                if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
+                    textoEmElemento.textContent = nuevoTexto.trim();
+                    saveTasks();
+                }
+            });
+        }
+
+        function saveTasks() {
+            const tareas = [];
+            listaTareas.querySelectorAll("li").forEach(itemTarea => {
+                const textoTarea = itemTarea.querySelector(".texto-tarea").textContent;
+                const completado = itemTarea.classList.contains("completado");
+                tareas.push({ texto: textoTarea, completado });
+            });
+            localStorage.setItem("tareas", JSON.stringify(tareas));
+        }
+
+        function loadTasks() {
+            const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+            tareas.forEach(tarea => {
+                const itemTarea = document.createElement("li");
+                itemTarea.className = "texto-elemento";
+                itemTarea.innerHTML = `
+                    <span class="texto-tarea">${tarea.texto}</span>
+                    <div> 
+                        <button class="boton-editar">Editar</button>
+                        <button class="completar-boton">Completar</button>
+                        <button class="borrarButton">Eliminar</button>
+                    </div>
+                `;
+                if (tarea.completado) {
+                    itemTarea.classList.add("completado");
+                }
+                listaTareas.appendChild(itemTarea);
+                addTaskEvents(itemTarea);
+            });
+        }
+
+        document.getElementById("mostrar-todas").addEventListener("click", function() {
+            listaTareas.querySelectorAll("li").forEach(itemTarea => {
+                itemTarea.style.display = "block";
+            });
+        });
+
+        document.getElementById("mostrar-completadas").addEventListener("click", function() {
+            listaTareas.querySelectorAll("li").forEach(itemTarea => {
+                if (itemTarea.classList.contains("completado")) {
+                    itemTarea.style.display = "block";
+                } else {
+                    itemTarea.style.display = "none";
+                }
+            });
+        });
+
+        document.getElementById("mostrar-no-completadas").addEventListener("click", function() {
+            listaTareas.querySelectorAll("li").forEach(itemTarea => {
+                if (!itemTarea.classList.contains("completado")) {
+                    itemTarea.style.display = "block";
+                } else {
+                    itemTarea.style.display = "none";
+                }
+            });
+        });
+
+        loadTasks();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Números Primos</title>
+    
+</head>
+<body>
+    <h1>Lista de Números Primos</h1>
+    <script src="index.js"></script>
+    <script>
+        // Llama a la función obtenerPrimos y manipula el DOM
+        let primos = obtenerPrimos(70);
+        let ul = document.createElement("ul");
+        primos.forEach((primo) => {
+            let li = document.createElement("li");
+            li.textContent = primo;
+            ul.appendChild(li);
+        });
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulación del DOM</title>
+</head>
+<body>
+    <input type="text" id="texto" placeholder="Escribe algo">
+    <button id="agregar">Agregar</button>
+    <ul id="lista"></ul>
+
+    <script>
+        document.getElementById('agregar').addEventListener('click', function() {
+            let texto = document.getElementById('texto').value;
+            if(texto.trim() !== "") {
+                let li = document.createElement('li');
+                li.textContent = texto;
+                document.getElementById('lista').appendChild(li);
+                document.getElementById('texto').value = "";
+                li.addEventListener('dblclick', function() {
+                    li.remove();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
