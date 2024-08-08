@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redireccion } from './Redireccion';
 
 function ListaDeTareas() {
-  const [tareas, setTareas] = useState([]);
+  const [tareas, setTareas] = useState(["primer tarea"]);
   const [nuevaTarea, setNuevaTarea] = useState('');
 
   const agregarTarea = () => {
@@ -21,9 +21,13 @@ function ListaDeTareas() {
         onChange={(e) => setNuevaTarea(e.target.value)}
       />
       <button onClick={agregarTarea}>Agregar Tarea</button>
+      
       <ul>
         {tareas.map((tarea, index) => (
-          <li key={index}>{tarea}</li>
+          <div key={index} >
+            <li >{tarea}</li>
+            <p>{index}</p> 
+          </div>
         ))}
       </ul>
        <Redireccion/>

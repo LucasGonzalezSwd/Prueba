@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Masitas Surtidas Diversión 1",
+    "descripcion": "Descripción del producto 1",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4czSCUI_axa2XRhKKqz-B207S6v3BMg-N1Q&s",
+    "precio": "100.00"
+  },
+  {
+    "id": 2,
+    "nombre": "Masitas Surtidas Diversión 2",
+    "descripcion": "Descripción del producto 2",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4czSCUI_axa2XRhKKqz-B207S6v3BMg-N1Q&s",
+    "precio": "15.00"
+  },
+  {
+    "id": 3,
+    "nombre": "Masitas Surtidas Diversión 3",
+    "descripcion": "Descripción del producto 3",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4czSCUI_axa2XRhKKqz-B207S6v3BMg-N1Q&s",
+    "precio": "20.00"
+  },
+  {
+    "id": 4,
+    "nombre": "Masitas Surtidas Diversión 4",
+    "descripcion": "Descripción del producto 4",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4czSCUI_axa2XRhKKqz-B207S6v3BMg-N1Q&s",
+    "precio": "40.00"
+  }
+]

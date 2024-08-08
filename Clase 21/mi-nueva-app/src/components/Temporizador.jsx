@@ -6,6 +6,7 @@ function Temporizador() {
 
   useEffect(() => {
     const intervalo = setInterval(() => {
+      
       setSegundos(segundos + 1);
     }, 1000);
     return () => clearInterval(intervalo);
@@ -14,7 +15,7 @@ function Temporizador() {
   return (
     <div>
    
-      <p>Segundos: {segundos}</p>
+      <p>Cantidad de segundos: {segundos}</p>
       <Redireccion/>
     </div>
   );
