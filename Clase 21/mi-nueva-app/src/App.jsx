@@ -10,20 +10,24 @@ import { Verduras } from "./components/Verduras";
 import {Carnes} from  "./components/Carnes"
 import {Herramientas} from "./components/Herramientas"
 
+
 function App() {
   return (
     <div className="App">
        <NavBar/>
 
       <Routes>
+      
       <Route path="/" exact element={<Tienda />}/> 
       <Route path="/verduras" element={<Verduras />}/> 
       <Route path="/carnes" element={<Carnes />}/> 
       <Route path="/Herramientas" element={<Herramientas />}/> 
+         
      
         {/* <Route path="/" element={<Home nombre="Pedrito" />} />
         <Route path="/temporizador" element={<Temporizador />} />
         <Route path="/listaTareas" element={<ListaDeTareas />} /> */}
+      
       </Routes>
     </div>
   );

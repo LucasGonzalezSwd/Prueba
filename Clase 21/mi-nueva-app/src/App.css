@@ -13,6 +13,21 @@
   }
 }
 
+
+
+.App{
+  margin: 0;
+  padding: 0;
+  
+}
+
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -71,8 +86,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #2b4d9238;
-  padding: 5px;
+  background-color: #93939358;
+ margin: -0.5rem;
+
 }
 
 .navbar-links{
@@ -90,4 +106,54 @@
 
 .navbar-links a:hover {
   background-color: rgba(0, 0, 255, 0.495);
+}
+
+.header-light {
+  background-color: white;
+  color: black;
+}
+
+.header-dark {
+  background-color: black;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.paginado{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+  list-style: none;
+
+
+}
+
+.divButton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.buttonPaginado{
+  padding: 0.1rem;
+  background-color: black;
+  color: white;
+  width: 2.4rem;
+  height: 2.4rem;
+ font-size: large;
+ 
+}
+
+.buttonPaginado:hover {
+  scale: 120%;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 10px -2px 20px 10px rgba(0, 0, 0, 0.608);
 }

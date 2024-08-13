@@ -5,7 +5,7 @@ import "../App.css"
 export const NavBar = () => {
   return (
     
-            <nav className='navbar'>
+            <div className='navbar'>
                 <h1>Mi tienda</h1>
 
                 <ul className='navbar-links'>
@@ -14,7 +14,7 @@ export const NavBar = () => {
                 <Link to="/verduras"> <li>Verduras</li></Link>
                 <Link to="/herramientas">  <li>Herramientas</li></Link>
                 </ul>
-            </nav>
+            </div>
  
   )
 }
