@@ -1,20 +1,20 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-//Explicación: useState devuelve un array con dos valores: el estado actual (count) y una función para actualizarlo (setCount).
-//Permite agregar estado a un componente funcional.
+// //Explicación: useState devuelve un array con dos valores: el estado actual (count) y una función para actualizarlo (setCount).
+// //Permite agregar estado a un componente funcional.
 
-function Counter() {
-  const [count, setCount] = useState(0);
+// function Counter() {
+//   const [count, setCount] = useState(0);
 
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <p>You clicked {count} times</p>
+//       <button onClick={() => setCount(count + 1)}>
+//         Click me
+//       </button>
+//     </div>
+//   );
+// }
 
 //////////////////Explicación: useEffect se ejecuta después de que el componente se renderiza. Aquí, realiza una llamada a una API y actualiza el estado con la respuesta.
 //Permite realizar efectos secundarios en componentes funcionales, como suscripciones o llamadas a APIs. 

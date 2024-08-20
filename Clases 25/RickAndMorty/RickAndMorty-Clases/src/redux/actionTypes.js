@@ -1,0 +1,3 @@
+export const GET_All = "GET_All";
+export const GET_CHARACTER_DETAIL = "GET_CHARACTER_DETAIL";
+export const ORDER_CHARACTERS = "ORDER_CHARACTERS";
