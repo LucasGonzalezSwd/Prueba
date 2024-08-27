@@ -24,10 +24,12 @@ body {
 .imgcontainer{
     display: flex;
     justify-content: center;
+    
 }
 .imagenancho{
     height: 15rem;
     width: 15rem;
+   
 }
 .bg{
     background-color: rgb(121, 28, 26);
@@ -38,6 +40,7 @@ body {
     align-items: center;
     border-radius: 1rem;
     margin-top: 2rem;
+    
     color: aliceblue;
 
 }
@@ -46,6 +49,7 @@ body {
     font-family: "Matemasie", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
   }
 
 .cards{
@@ -58,8 +62,39 @@ body {
     padding-top:2rem ;
     border-radius: 1rem;
     color: aliceblue;
+    
 }
 
 .text{
     width: 15rem;
+    
+    
 }
+
+
+
+
+.buttonBack{
+    color:white;
+height: 2rem;
+    width: 2rem;
+    
+    
+}
+
+.containerBack{
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    text-align: center;
+}
+

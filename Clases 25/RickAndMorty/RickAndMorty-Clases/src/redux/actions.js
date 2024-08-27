@@ -1,15 +1,19 @@
 // src/redux/actions.js
 import axios from "axios";
 
-import { GET_All, GET_CHARACTER_DETAIL, ORDER_CHARACTERS } from "./actionTypes";
-
-// const URL = process.env.REACT_APP_URL;
+import {
+  GET_All,
+  GET_CHARACTER_DETAIL,
+  SET_PAGE,
+  SET_ORDER,
+} from "./actionTypes";
 
 export const getAll = () => {
   return async function (dispatch) {
     const characters = (
       await axios.get(`https://rickandmortyapi.com/api/character`)
     ).data;
+    console.log(characters);
     return dispatch({ type: GET_All, payload: characters });
   };
 };
@@ -23,9 +27,13 @@ export const getCharacterDetail = (id) => {
   };
 };
 
-export const orderCharacters = (order) => {
-  return {
-    type: ORDER_CHARACTERS,
-    payload: order, // Puede ser 'asc' o 'desc'
-  };
-};
+// Action Creators
+export const setPage = (page) => ({
+  type: SET_PAGE,
+  payload: page,
+});
+
+export const setOrder = (order) => ({
+  type: SET_ORDER,
+  payload: order,
+});

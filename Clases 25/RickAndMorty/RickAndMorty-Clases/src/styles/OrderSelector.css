@@ -1,0 +1,9 @@
+.order-selector {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .order-selector label {
+    margin-right: 10px;
+  }
