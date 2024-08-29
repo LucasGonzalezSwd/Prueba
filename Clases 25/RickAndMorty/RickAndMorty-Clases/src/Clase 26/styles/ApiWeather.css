@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.containerapi{
+ width: 100vw;
+ height: 100%;
+display: flex;
+justify-content: center;
+
+}
+
+.cardApi{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3rem;
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    background-color: rgb(37, 130, 218);
+    color: aliceblue;
+}
