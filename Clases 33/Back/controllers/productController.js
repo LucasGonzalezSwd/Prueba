@@ -2,14 +2,25 @@ const Product = require("../models/Productos");
 
 const createProduct = async (req, res) => {
   try {
-    // Validar que los campos nombre y price no falten
-    const { name, price, description, stock, category } = req.body;
-    if (!name || !price || !description || !stock || !category) {
-      return res
-        .status(400)
-        .json({ message: "Faltan campos requeridos: nombre y price." });
+    const { name, price, description, stock, category, image } = req.body;
+
+    // Validar que los campos requeridos no falten
+    if (!name || !price || !description || !stock || !category || !image) {
+      return res.status(400).json({ message: "Faltan campos requeridos" });
     }
 
+    // Validar que la categoría sea válida antes de intentar guardar en la base de datos
+    const validCategories = [
+      "electrodomésticos",
+      "ropa",
+      "comidas",
+      "herramientas",
+    ];
+    if (!validCategories.includes(category)) {
+      return res.status(400).json({ message: "Categoría no válida" });
+    }
+
+    // Crear y guardar el producto
     const product = new Product(req.body);
     await product.save();
     res.status(201).json(product);
@@ -59,9 +70,33 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+// Controlador para obtener productos filtrados por categoría
+const getProductsByCategory = async (req, res) => {
+  try {
+    const { category } = req.params; // Obtener la categoría de los parámetros de la URL
+    // Validar que la categoría es válida
+    const validCategories = [
+      "electrodomésticos",
+      "ropa",
+      "comidas",
+      "herramientas",
+    ];
+    if (!validCategories.includes(category)) {
+      return res.status(400).json({ message: "Categoría no válida" });
+    }
+
+    // Obtener los productos de la categoría especificada
+    const products = await Product.find({ category });
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   createProduct,
   getProducts,
   updateProduct,
   deleteProduct,
+  getProductsByCategory,
 };

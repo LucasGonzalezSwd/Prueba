@@ -3,11 +3,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const productosRoutes = require("./routes/productRoutes");
 const app = express();
+const cors = require("cors");
 
 // Middleware para parsear el cuerpo de la petición como JSON
 // Middleware para parsear el cuerpo de la petición como JSON
 app.use(express.json()); // Para solicitudes JSON
 app.use(express.urlencoded({ extended: true })); // Para solicitudes URL-encoded
+app.use(cors());
 
 // Conectar a MongoDB
 mongoose
